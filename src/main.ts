@@ -19,7 +19,7 @@ form.addEventListener('submit', async (event) => {
     const chatCompletion = await openai.chat.completions.create({
       model: "gpt-4-1106-preview",
       messages: [
-        { role: "system", "content": "you are an experienced web developer capable of generating html pages using tailwind. You produce the code between the <body> tags with no text before or after. You return valid html code. You never add markdown syntax or ```"},
+        { role: "system", content: import.meta.env.VITE_PROMPT},
         { role: "user", content: prompt }
       ],
       // stream: true,
